@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://fabriceLatri:LaRIb200506@devconnector-giclb.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "githubClientId": "",
+  "githubSecret": ""
+}
