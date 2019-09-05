@@ -2,8 +2,9 @@
   "name": "mern-rush",
   "version": "1.0.0",
   "description": "mern project ",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,8 +13,18 @@
   },
   "author": "Imad Ouibourk Fabrice Latri",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fabolododo/Mern-Rush/issues"
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.1.0",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.1",
+    "request": "^2.88.0"
   },
-  "homepage": "https://github.com/fabolododo/Mern-Rush#readme"
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.11"
+  }
 }
