@@ -1,0 +1,19 @@
+{
+  "name": "mern-rush",
+  "version": "1.0.0",
+  "description": "mern project ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fabolododo/Mern-Rush.git"
+  },
+  "author": "Imad Ouibourk Fabrice Latri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabolododo/Mern-Rush/issues"
+  },
+  "homepage": "https://github.com/fabolododo/Mern-Rush#readme"
+}
