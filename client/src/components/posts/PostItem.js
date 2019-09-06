@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { addLike, removeLike, deletePost } from '../../actions/post';
+import 'font-awesome/css/font-awesome.min.css';
 
 const PostItem = ({
   addLike,
@@ -33,7 +34,7 @@ const PostItem = ({
             type='button'
             className='btn btn-light'
           >
-            <i className='fas fa-thumbs-up' />{' '}
+            <i className='fa fa-thumbs-up' />{' '}
             <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
           <button
@@ -41,7 +42,7 @@ const PostItem = ({
             type='button'
             className='btn btn-light'
           >
-            <i className='fas fa-thumbs-down' />
+            <i className='fa fa-thumbs-down' />
           </button>
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
             Discussion{' '}
@@ -55,7 +56,7 @@ const PostItem = ({
               type='button'
               className='btn btn-danger'
             >
-              <i className='fas fa-times' />
+              <i className='fa fa-times' />
             </button>
           )}
         </Fragment>
