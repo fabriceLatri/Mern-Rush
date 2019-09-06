@@ -6,18 +6,18 @@ import { login } from '../../actions/auth';
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
-    email: '',
+    name: '',
     password: ''
   });
 
-  const { email, password } = formData;
+  const { name, password } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {
     e.preventDefault();
-    login(email, password);
+    login(name, password);
   };
 
   if (isAuthenticated) {
@@ -28,15 +28,15 @@ const Login = ({ login, isAuthenticated }) => {
     <Fragment>
       <h1 className='large text-primary'>Sign In</h1>
       <p className='lead'>
-        <i className='fas fa-user' /> Sign Into Your Account
+        <i className='fa fa-user' /> Sign Into Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
           <input
-            type='email'
-            placeholder='Email Address'
-            name='email'
-            value={email}
+            type='text'
+            placeholder='User Name'
+            name='name'
+            value={name}
             onChange={e => onChange(e)}
             required
           />
