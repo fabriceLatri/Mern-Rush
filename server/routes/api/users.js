@@ -3,6 +3,7 @@ const router = express.Router();
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const auth = require('../../middleware/auth');
 const config = require('config');
 const { check, validationResult } = require('express-validator/check');
 
@@ -80,5 +81,40 @@ router.post(
     }
   }
 );
+
+//@route  GET api/users
+//@desc   Get all users
+//@access Private
+
+router.get('/', auth, async (req, res) => {
+  console.log('Je rentre dans la fonction');
+  
+  try {
+    const users = await User.find();
+    res.json(users);
+    console.log(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//@route  GET api/users
+//@desc   Get user by ID
+//@access Private
+router.get('/:id', async (req, res) => {
+  try {
+    const user = await User.findOne({_id: req.params._id });
+    if (!user) return res.status(400).json({ msg: 'User not found' });
+    
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    if (err.kind == 'ObjectId') {
+      return res.status(400).json({ msg: 'User not found' });
+      }
+    res.status(500).send('Server Error');
+      }
+})
 
 module.exports = router;
