@@ -104,10 +104,15 @@ router.get('/', auth, async (req, res) => {
 //@access Private
 router.get('/:id', async (req, res) => {
   try {
-    const user = await User.findOne({_id: req.params._id });
-    if (!user) return res.status(400).json({ msg: 'User not found' });
+    console.log(req.params.id);
+    const user = await User.findOne({_id: req.params.id });
+    if (!user) {
+    return res.status(400).json({ msg: 'User not found' });
+  }
     
     res.json(user);
+  console.log(user);
+
   } catch (err) {
     console.error(err.message);
     if (err.kind == 'ObjectId') {

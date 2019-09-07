@@ -18,21 +18,17 @@ const Users = ({ getUsers, user: { users, loading } }) => {
                 <Fragment>
                     <div className="container">
                         <h1 className='large text-primary'>Users</h1>
-                            <p className='lead'>
-                                <i className='fa fa-connectdevelop' />Browse and connect with users
-                            </p>
-                            <div className='post bg-white p-1 my-1'>
-                            <div className='users'>
-                                <div className="card-deck">
-                                    {users.length > 0 ? (
-                                        users.map(user => (
-                                            <UserItem key={user._id} user={user} />
-                                        ))
-                                    ) : (
-                                        <h4>No users found...</h4>
-                                    )}
-                                </div>
-                            </div>
+                        <p className='lead'>
+                            <i className='fa fa-connectdevelop' />Browse and connect with users
+                        </p>
+                        <div className='users'>
+                            {users.length > 0 ? (
+                                users.map(user => (
+                                    <UserItem key={user._id} user={user} />
+                                ))
+                            ) : (
+                                <h4>No users found...</h4>
+                            )}
                         </div>
                     </div>
                 </Fragment>
