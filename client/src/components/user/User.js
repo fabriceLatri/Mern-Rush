@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import UserItem from '../users/UserItem';
+import UserItem from './UserItem';
 import { getUserById } from '../../actions/user';
 
 const User = ({
@@ -30,7 +30,7 @@ const User = ({
                         </Link>
                     )}
                     <div className='profile-grid my-1'>
-                        <UserItem user={user}/>>
+                        <UserItem user={user}/>
                     </div>
                 </Fragment>
             )}

@@ -14,6 +14,7 @@ import Posts from '../posts/Posts';
 import Post from '../post/Post';
 import Users from '../users/Users';
 import User from '../user/User';
+import EditUser from '../user-forms/EditUser';
 import NotFound from '../layout/NotFound';
 import PrivateRoute from '../routing/PrivateRoute';
 
@@ -35,6 +36,7 @@ const Routes = () => {
         <PrivateRoute exact path='/posts/:id' component={Post} />
         <PrivateRoute exact path='/users' component={Users} />
         <PrivateRoute exact path='/user/:id' component={User} />
+        <PrivateRoute exact path='/edit-user' component={EditUser} />
         <Route component={NotFound} />
       </Switch>
     </section>

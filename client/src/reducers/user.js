@@ -1,8 +1,9 @@
 import {
     GET_USERS,
     GET_USER,
+    UPDATE_USER,
     CLEAR_USER,
-    USER_ERROR
+    USER_ERROR,
 } from '../actions/types';
 
 const initialState = {
@@ -26,6 +27,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 users: payload,
+                loading: false
+            };
+        case UPDATE_USER:
+            return {
+                ...state,
+                user: payload,
                 loading: false
             };
         case CLEAR_USER:
