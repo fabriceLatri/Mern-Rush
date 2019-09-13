@@ -8,6 +8,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
+        <Link to='/dashboard'>Dashboard</Link>
+      </li>
+      <li>
         <Link to='/profiles'>Developers</Link>
       </li>
       <li>
@@ -43,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fa fa-code' /> DevConnector
+          <i className='fa fa-code' /> MicroBloggos
         </Link>
       </h1>
       {!loading && (
