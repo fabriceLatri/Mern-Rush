@@ -87,12 +87,10 @@ router.post(
 //@access Private
 
 router.get('/', auth, async (req, res) => {
-  console.log('Je rentre dans la fonction');
   
   try {
     const users = await User.find();
     res.json(users);
-    console.log(users);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Server Error');
